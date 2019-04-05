@@ -55,7 +55,7 @@ it('should update user', async () => {
     typeOfChange: updatedUser ? 'updated' : null,
     sortField: '_id'
   });
-})
+});
 ```
 
 ## API
