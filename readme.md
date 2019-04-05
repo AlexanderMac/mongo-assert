@@ -11,8 +11,8 @@ This library is created to assert made changes in mongodb. Useful when you want 
 
 ## Commands
 ```bash
-# Add to project
-$ npm i mongo-assert
+# Add to project, should install it as dev dependency
+$ npm i -D mongo-assert
 ```
 
 ## Usage
