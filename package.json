@@ -1,0 +1,37 @@
+{
+  "name": "mongo-assert",
+  "version": "0.1.0",
+  "description": "Mongo assertion library",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "lint": "eslint --ext .js index.js test/",
+    "test": "NODE_ENV=test mocha",
+    "coverage": "nyc npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexanderMac/mongo-assert.git"
+  },
+  "keywords": [
+    "mongo",
+    "mongodb",
+    "mongoose",
+    "assert",
+    "assertion",
+    "test"
+  ],
+  "author": "Alexander Mac",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexanderMac/mongo-assert/issues"
+  },
+  "homepage": "https://github.com/AlexanderMac/mongo-assert#readme",
+  "dependencies": {},
+  "devDependencies": {}
+}
