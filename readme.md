@@ -6,7 +6,7 @@ Mongo assertion library.
 [![Code Coverage](https://codecov.io/gh/AlexanderMac/mongo-assert/branch/master/graph/badge.svg)](https://codecov.io/gh/AlexanderMac/mongo-assert)
 [![npm version](https://badge.fury.io/js/mongo-assert.svg)](https://badge.fury.io/js/mongo-assert)
 
-### Why
+## Why
 This library is created to assert made changes in mongodb. Useful when you want to be sure that method added, updated or deleted only one document, and other were unchanged.
 
 ## Commands
