@@ -1,10 +1,8 @@
-'use strict';
-
-const _           = require('lodash');
-const mongoose    = require('mongoose');
-const sinon       = require('sinon');
-const should      = require('should');
-const nassert     = require('n-assert');
+const _ = require('lodash');
+const mongoose = require('mongoose');
+const sinon = require('sinon');
+const should = require('should');
+const nassert = require('n-assert');
 const mongoassert = require('../');
 
 const Schema = mongoose.Schema;

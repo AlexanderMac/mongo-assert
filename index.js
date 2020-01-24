@@ -1,6 +1,4 @@
-'use strict';
-
-const _       = require('lodash');
+const _ = require('lodash');
 const nassert = require('n-assert');
 
 exports.assertCollection = ({ model, initialDocs, changedDoc, typeOfChange, sortField }) => {
