@@ -2,7 +2,7 @@
 
 Mongo assertion library.
 
-[![Build Status](https://travis-ci.org/AlexanderMac/mongo-assert.svg?branch=master)](https://travis-ci.org/AlexanderMac/mongo-assert)
+[![Build Status](https://github.com/AlexanderMac/mongo-assert/workflows/CI/badge.svg)](https://github.com/AlexanderMac/mongo-assert/actions?query=workflow%3ACI)
 [![Code Coverage](https://codecov.io/gh/AlexanderMac/mongo-assert/branch/master/graph/badge.svg)](https://codecov.io/gh/AlexanderMac/mongo-assert)
 [![npm version](https://badge.fury.io/js/mongo-assert.svg)](https://badge.fury.io/js/mongo-assert)
 
@@ -17,8 +17,8 @@ $ npm i -D mongo-assert
 
 ## Usage
 ```js
-const nassert     = require('n-assert');
-const mongoassert = require('mongo-assert');
+const nassert = require('n-assert')
+const mongoassert = require('mongo-assert')
 
 const initialUsers = [
   {
@@ -33,20 +33,20 @@ const initialUsers = [
     firstName: 'John',
     lastName: 'Smith'
   }
-];
+]
 
 it('should update user', async () => {
-  let filter = { _id: initialUsers[0]._id };
+  let filter = { _id: initialUsers[0]._id }
   let userData = {
       email: 'smith-another-email@mail.com'
-  };
+  }
   let updatedUser = {
     _id: initialUsers[0]._id,
     email: 'smith-another-email@mail.com'
-  };
+  }
 
-  await User.create(initialUsers);
-  await usersSrvc.updateUser({ filter, userData });
+  await User.create(initialUsers)
+  await usersSrvc.updateUser({ filter, userData })
 
   await mongoassert.assertCollection({
     model: User,
@@ -54,8 +54,8 @@ it('should update user', async () => {
     changedDoc: updatedUser,
     typeOfChange: updatedUser ? 'updated' : null,
     sortField: '_id'
-  });
-});
+  })
+})
 ```
 
 ## API
