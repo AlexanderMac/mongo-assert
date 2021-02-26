@@ -1,27 +1,27 @@
-const _ = require('lodash');
-const nassert = require('n-assert');
+const _ = require('lodash')
+const nassert = require('n-assert')
 
 exports.assertCollection = ({ model, initialDocs, changedDoc, typeOfChange, sortField }) => {
   if (!model) {
-    throw new Error('<model> is undefined');
+    throw new Error('<model> is undefined')
   }
   if (!_.isFunction(model.find)) {
-    throw new Error('<model> is not mongoose model');
+    throw new Error('<model> is not mongoose model')
   }
   if (!_.isArray(initialDocs)) {
-    throw new Error('<initialDocs> is undefined or not an array of documents');
+    throw new Error('<initialDocs> is undefined or not an array of documents')
   }
   if (typeOfChange) {
     if (!_.includes(['created', 'updated', 'deleted'], typeOfChange)) {
-      throw new Error('Unknown <typeOfChange>');
+      throw new Error('Unknown <typeOfChange>')
     }
     if (!changedDoc) {
-      throw new Error('<changedDoc> must be defined, when <typeOfChange> is defined');
+      throw new Error('<changedDoc> must be defined, when <typeOfChange> is defined')
     }
   }
 
-  let temp;
-  let expectedDocs = _.cloneDeep(initialDocs);
+  let temp
+  let expectedDocs = _.cloneDeep(initialDocs)
   return model
     .find()
     .lean()
@@ -29,27 +29,27 @@ exports.assertCollection = ({ model, initialDocs, changedDoc, typeOfChange, sort
     .then(actualDocs => {
       switch (typeOfChange) {
         case 'created':
-          expectedDocs.push(changedDoc);
-          break;
+          expectedDocs.push(changedDoc)
+          break
         case 'updated':
-          temp = _.find(expectedDocs, doc => _safeToString(doc._id) === _safeToString(changedDoc._id));
-          _.extend(temp, changedDoc);
-          break;
+          temp = _.find(expectedDocs, doc => _safeToString(doc._id) === _safeToString(changedDoc._id))
+          _.extend(temp, changedDoc)
+          break
         case 'deleted':
-          _.remove(expectedDocs, doc => _safeToString(doc._id) === _safeToString(changedDoc._id));
-          break;
+          _.remove(expectedDocs, doc => _safeToString(doc._id) === _safeToString(changedDoc._id))
+          break
       }
 
       if (sortField) {
-        actualDocs = _.sortBy(actualDocs, sortField);
-        expectedDocs = _.sortBy(expectedDocs, sortField);
+        actualDocs = _.sortBy(actualDocs, sortField)
+        expectedDocs = _.sortBy(expectedDocs, sortField)
       }
 
-      nassert.assert(actualDocs, expectedDocs);
-      return null;
-    });
-};
+      nassert.assert(actualDocs, expectedDocs)
+      return null
+    })
+}
 
 function _safeToString(val) {
-  return _.isNil(val) ? val : val.toString();
+  return _.isNil(val) ? val : val.toString()
 }
