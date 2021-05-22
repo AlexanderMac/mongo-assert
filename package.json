@@ -36,7 +36,7 @@
   "homepage": "https://github.com/AlexanderMac/mongo-assert#readme",
   "dependencies": {
     "lodash": "^4.17.15",
-    "n-assert": "^5.0.2"
+    "n-assert": "^7.0.0"
   },
   "devDependencies": {
     "eslint": "^7.20.0",
@@ -44,6 +44,6 @@
     "mongoose": "^5.8.9",
     "nyc": "^15.0.0",
     "should": "^13.2.3",
-    "sinon": "^9.2.4"
+    "sinon": "^10.0.0"
   }
 }
