@@ -6,16 +6,15 @@ Mongo assertion library.
 [![Code Coverage](https://codecov.io/gh/AlexanderMac/mongo-assert/branch/master/graph/badge.svg)](https://codecov.io/gh/AlexanderMac/mongo-assert)
 [![npm version](https://badge.fury.io/js/mongo-assert.svg)](https://badge.fury.io/js/mongo-assert)
 
-## Why
+### Why
 This library is created to assert made changes in mongodb. Useful when you want to be sure that method added, updated or deleted only one document, and other were unchanged.
 
-## Commands
+### Install
 ```bash
-# Add to project, should install it as dev dependency
 $ npm i -D mongo-assert
 ```
 
-## Usage
+### Usage
 ```js
 const nassert = require('n-assert')
 const mongoassert = require('mongo-assert')
@@ -58,7 +57,7 @@ it('should update user', async () => {
 })
 ```
 
-## API
+### API
 - **assertCollection({ model, initialDocs, changedDoc, typeOfChange, sortField })**<br>
 Asserts mongodb collection. Loads all documents in the collection, merges initial collection with changed document and asserts.
 
@@ -68,8 +67,8 @@ Asserts mongodb collection. Loads all documents in the collection, merges initia
   - `typeOfChange` - the type of the change (_created_, _updated_, _deleted_), must be omitted if collection is unchanged.
   - `sortField` - the field which should be used for sorting actual and expected collections before asseting.
 
-## Author
-Alexander Mac
-
-## Licence
+### Licence
 Licensed under the MIT license.
+
+### Author
+Alexander Mac
