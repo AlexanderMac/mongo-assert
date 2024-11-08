@@ -1,5 +1,7 @@
 # mongo-assert
 
+## WARNING :warning:: This repo is not maintained anymore.
+
 Mongo assertion library.
 
 [![Build Status](https://github.com/AlexanderMac/mongo-assert/workflows/CI/badge.svg)](https://github.com/AlexanderMac/mongo-assert/actions?query=workflow%3ACI)
